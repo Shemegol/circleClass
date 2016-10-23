@@ -50,7 +50,7 @@ public class Circle {
     }
 
     public boolean isPointInCircle(double x, double y) {
-        return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)) <= radius;
+        return Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2) <= Math.pow(radius, 2);
     }
 
     public double calculateCircumference() {
