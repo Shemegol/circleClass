@@ -1,0 +1,2 @@
+# circleClass
+класс Круг
