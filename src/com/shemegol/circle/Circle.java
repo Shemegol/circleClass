@@ -52,8 +52,9 @@ public class Circle {
     }
 
     public boolean isPointInCircle(double x, double y) {
-        return new BigDecimal(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2)).setScale(6, RoundingMode.HALF_UP).doubleValue()
-                <= new BigDecimal(Math.pow(radius, 2)).setScale(6, RoundingMode.HALF_UP).doubleValue();
+        double eps = 0.000001;
+        double d = (Math.sqrt(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2)));
+        return d < radius || Math.abs(d - radius) <= eps;
     }
 
     public double calculateCircumference() {
