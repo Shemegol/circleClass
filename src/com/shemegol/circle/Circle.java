@@ -1,5 +1,7 @@
 package com.shemegol.circle;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Circle {
     private double x;
@@ -50,7 +52,8 @@ public class Circle {
     }
 
     public boolean isPointInCircle(double x, double y) {
-        return Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2) <= Math.pow(radius, 2);
+        return new BigDecimal(Math.pow(x - this.x, 2) + Math.pow(y - this.y, 2)).setScale(6, RoundingMode.HALF_UP).doubleValue()
+                <= new BigDecimal(Math.pow(radius, 2)).setScale(6, RoundingMode.HALF_UP).doubleValue();
     }
 
     public double calculateCircumference() {
