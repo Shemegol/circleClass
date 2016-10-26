@@ -1,8 +1,5 @@
 package com.shemegol.circle;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-
 public class Circle {
     private double x;
     private double y;
@@ -72,6 +69,5 @@ public class Circle {
     public String toString() {
         return "Окружность с центром в точке [" + x + "," + y + "] и радиусом " + radius;
     }
-
 }
 
